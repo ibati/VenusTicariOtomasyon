@@ -1,0 +1,79 @@
+﻿@using VenusTicariOtomasyon.Models.Siniflar
+@model List<Departmanlar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1 class="m-0">Departmanlar</h1>
+                </div><!-- /.col -->
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Departmanlar</li>
+                    </ol>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+    <!-- Main content -->
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Departmanlar Listesi</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th width="5%">ID</th>
+                                        <th>Departman Adı</th>
+                                        <th width="15%">İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var d in Model)
+                                    {
+                                        <tr>
+                                            <td>@d.DepartmanID</td>
+                                            <td>@d.DepartmanAd</td>
+                                            <td>
+                                                <a class="btn-sm btn-primary" href="/Departmanlar/DepartmanDetay/@d.DepartmanID">Detaylar</a>
+                                                <a class="btn-sm btn-secondary" href="/Departmanlar/DepartmanGetir/@d.DepartmanID">Güncelle</a>
+                                                <a class="btn-sm btn-danger" href="/Departmanlar/DepartmanSil/@d.DepartmanID">Sil</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Departman Adı</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+</div>
+

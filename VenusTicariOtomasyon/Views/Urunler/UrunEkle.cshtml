@@ -1,0 +1,82 @@
+﻿@model VenusTicariOtomasyon.Models.Siniflar.Urunler
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Yeni Ürün Ekle</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+                        <li class="breadcrumb-item active">Yeni Ürün Ekle</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-secondary">
+                        <div class="card-header">
+                            <h3 class="card-title">Yeni Ürün Ekle</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="post">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    @Html.Label("Ürün Adı")
+                                    @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Marka")
+                                    @Html.TextBoxFor(x => x.Marka, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Stok Miktarı")
+                                    @Html.TextBoxFor(x => x.Stok, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Alış Fiyatı")
+                                    @Html.TextBoxFor(x => x.AlisFiyat, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Satış Fiyatı")
+                                    @Html.TextBoxFor(x => x.SatisFiyat, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Kategori")
+                                    @Html.DropDownListFor(x => x.KategoriID, (List<SelectListItem>)ViewBag.kategoriler, new { @class = "custom-select" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Ürün Görseli")
+                                    @Html.TextBoxFor(x => x.UrunGorsel, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Durum")
+                                    @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-secondary">Ürünü Kaydet</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
