@@ -14,9 +14,11 @@ namespace VenusTicariOtomasyon.Models.Siniflar
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
-
-        public Urunler Urunler { get; set; }
-        public Cariler Cariler { get; set; }
-        public Personeller Personeller { get; set; }
+        public int UrunID { get; set; }
+        public int CariID { get; set; }
+        public int PersonelID { get; set; }
+        public virtual Urunler Urunler { get; set; }
+        public virtual Cariler Cariler { get; set; }
+        public virtual Personeller Personeller { get; set; }
     }
 }

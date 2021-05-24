@@ -56,5 +56,21 @@ namespace VenusTicariOtomasyon.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult DepartmanDetay(int id)
+        {
+            var personel = c.Personellers.Where(x => x.DepartmanID == id).ToList();
+            var departman = c.Departmanlars.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
+            ViewBag.departman = departman;
+            return View(personel);
+        }
+
+        public ActionResult DepartmanPersonelSatis(int id)
+        {
+            var satislar = c.SatisHareketleris.Where(x => x.PersonelID == id).ToList();
+            var personel = c.Personellers.Where(x => x.PersonelID == id).Select(y => y.PersonelAd +" "+  y.PersonelSoyad).FirstOrDefault();
+            ViewBag.personel = personel;
+            return View(satislar);
+        }
+
     }
 }

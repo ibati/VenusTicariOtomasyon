@@ -25,6 +25,7 @@ namespace VenusTicariOtomasyon.Models.Siniflar
         public string PersonelGorsel { get; set; }
         public ICollection<SatisHareketleri> SatisHareketleris { get; set; }
 
-        public Departmanlar Departmanlar { get; set; }
+        public int DepartmanID { get; set; }
+        public virtual Departmanlar Departmanlar { get; set; }
     }
 }

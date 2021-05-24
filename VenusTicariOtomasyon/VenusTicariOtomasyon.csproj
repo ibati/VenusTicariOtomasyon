@@ -2529,6 +2529,8 @@
     <Content Include="Views\Departmanlar\Index.cshtml" />
     <Content Include="Views\Departmanlar\DepartmanGetir.cshtml" />
     <Content Include="Views\Departmanlar\DepartmanEkle.cshtml" />
+    <Content Include="Views\Departmanlar\DepartmanDetay.cshtml" />
+    <Content Include="Views\Departmanlar\DepartmanPersonelSatis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
