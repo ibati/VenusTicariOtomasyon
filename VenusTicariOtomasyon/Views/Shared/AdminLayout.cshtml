@@ -93,8 +93,8 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!--ürünler-->
-                        <li class="nav-item @Html.ActiveModule("Urunler")">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item @Html.OpenModule("Urunler")">
+                            <a href="#" class="nav-link @Html.ActiveModule("Urunler")">
                                 <i class="nav-icon fas fa-industry"></i>
                                 <p>
                                     Ürünler
@@ -117,8 +117,8 @@
                             </ul>
                         </li>
                         <!--Kategoriler-->
-                        <li class="nav-item @Html.ActiveModule("Kategoriler")">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item @Html.OpenModule("Kategoriler")">
+                            <a href="#" class="nav-link @Html.ActiveModule("Kategoriler")">
                                 <i class="nav-icon fas fa-clipboard-list"></i>
                                 <p>
                                     Kategoriler
@@ -141,8 +141,8 @@
                             </ul>
                         </li>
                         <!--Departmanlar-->
-                        <li class="nav-item @Html.ActiveModule("Departmanlar")">
-                            <a href="#" class="nav-link">
+                        <li class="nav-item @Html.OpenModule("Departmanlar")">
+                            <a href="#" class="nav-link @Html.ActiveModule("Departmanlar")">
                                 <i class="nav-icon fas fa-building"></i>
                                 <p>
                                     Departmanlar
@@ -160,6 +160,30 @@
                                     <a href="/Departmanlar/DepartmanEkle" class="nav-link @Html.ActivePage("Departmanlar","DepartmanEkle")">
                                         <i class="fas fa-plus-square nav-icon"></i>
                                         <p>Yeni Departmanlar Ekle</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--Cariler-->
+                        <li class="nav-item @Html.OpenModule("Cariler")">
+                            <a href="#" class="nav-link @Html.ActiveModule("Cariler")">
+                                <i class="nav-icon fas fa-user-friends"></i>
+                                <p>
+                                    Cariler
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/Cariler/Index" class="nav-link @Html.ActivePage("Cariler","Index")">
+                                        <i class="fas fa-list-ol nav-icon"></i>
+                                        <p>Carileri Listele</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Cariler/CariEkle" class="nav-link @Html.ActivePage("Cariler","CariEkle")">
+                                        <i class="fas fa-plus-square nav-icon"></i>
+                                        <p>Yeni Cari Ekle</p>
                                     </a>
                                 </li>
                             </ul>

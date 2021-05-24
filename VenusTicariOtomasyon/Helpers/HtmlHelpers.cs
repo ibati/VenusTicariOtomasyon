@@ -20,13 +20,24 @@ namespace VenusTicariOtomasyon.Helpers
             return classValue;
         }
 
-        public static string ActiveModule(this HtmlHelper helper, string controller)
+        public static string OpenModule(this HtmlHelper helper, string controller)
         {
             string classValue = "";
             string currentController = helper.ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
             if (currentController == controller)
             {
                 classValue = "menu-open";
+            }
+            return classValue;
+        }
+
+        public static string ActiveModule(this HtmlHelper helper, string controller)
+        {
+            string classValue = "";
+            string currentController = helper.ViewContext.Controller.ValueProvider.GetValue("controller").RawValue.ToString();
+            if (currentController == controller)
+            {
+                classValue = "active";
             }
             return classValue;
         }

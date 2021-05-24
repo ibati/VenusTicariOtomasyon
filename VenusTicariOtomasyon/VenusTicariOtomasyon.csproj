@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CarilerController.cs" />
     <Compile Include="Controllers\DepartmanlarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
@@ -2531,6 +2532,8 @@
     <Content Include="Views\Departmanlar\DepartmanEkle.cshtml" />
     <Content Include="Views\Departmanlar\DepartmanDetay.cshtml" />
     <Content Include="Views\Departmanlar\DepartmanPersonelSatis.cshtml" />
+    <Content Include="Views\Cariler\Index.cshtml" />
+    <Content Include="Views\Cariler\CariEkle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
