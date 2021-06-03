@@ -24,6 +24,10 @@ namespace VenusTicariOtomasyon.Controllers
         [HttpPost]
         public ActionResult CariEkle(Cariler p)
         {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             c.Carilers.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -35,5 +39,38 @@ namespace VenusTicariOtomasyon.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public ActionResult CariGetir(int id)
+        {
+            var cari = c.Carilers.Find(id);
+            return View("CariGetir", cari);
+        }
+
+        public ActionResult CariGuncelle(Cariler p)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("CariGetir");
+            }
+            var cari = c.Carilers.Find(p.CariID);
+            cari.CariAd = p.CariAd;
+            cari.CariSoyad = p.CariSoyad;
+            cari.CariSehir = p.CariSehir;
+            cari.CariMail = p.CariMail;
+            cari.CariUnvan = p.CariUnvan;
+            cari.Durum = p.Durum;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
+
+        public ActionResult Satislar(int id)
+        {
+            var satislar = c.SatisHareketleris.Where(x => x.CariID == id).ToList();
+            var cari = c.Carilers.Where(x => x.CariID == id).Select(y => y.CariAd + " " + y.CariSoyad).FirstOrDefault();
+            ViewBag.cari = cari;
+            return View(satislar);
+        }
+
     }
 }

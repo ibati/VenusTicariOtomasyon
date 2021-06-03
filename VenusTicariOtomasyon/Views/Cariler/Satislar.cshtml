@@ -1,7 +1,7 @@
 ﻿@using VenusTicariOtomasyon.Models.Siniflar
-@model List<Cariler>
+@model List<SatisHareketleri>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Satislar";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 
@@ -12,12 +12,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Cariler</h1>
+                    <h1 class="m-0">Satışlar</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
-                        <li class="breadcrumb-item active">Cariler</li>
+                        <li class="breadcrumb-item active">Satışlar</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -31,7 +31,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Cari Listesi</h3>
+                            <h3 class="card-title">Satışlar - @ViewBag.Cari</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -39,11 +39,11 @@
                                 <thead>
                                     <tr>
                                         <th width="5%">ID</th>
-                                        <th>Adı</th>
-                                        <th>Soyadı</th>
-                                        <th>Ünvan</th>
-                                        <th>Şehir</th>
-                                        <th>Mail</th>
+                                        <th>Ürün</th>
+                                        <th>Personel</th>
+                                        <th>Fiyat</th>
+                                        <th>Adet</th>
+                                        <th>Tarih</th>
                                         <th width="15%">İşlemler</th>
                                     </tr>
                                 </thead>
@@ -51,16 +51,14 @@
                                     @foreach (var c in Model)
                                     {
                                         <tr>
-                                            <td>@c.CariID</td>
-                                            <td>@c.CariAd</td>
-                                            <td>@c.CariSoyad</td>
-                                            <td>@c.CariUnvan</td>
-                                            <td>@c.CariSehir</td>
-                                            <td>@c.CariMail</td>
+                                            <td>@c.SatisID</td>
+                                            <td>@c.Urunler.UrunAd</td>
+                                            <td>@c.Personeller.PersonelAd</td>
+                                            <td>@c.Fiyat</td>
+                                            <td>@c.Adet</td>
+                                            <td>@c.Tarih</td>
                                             <td>
-                                                <a class="btn-sm btn-primary" href="/Cariler/Satislar/@c.CariID">Satışlar</a>
-                                                <a class="btn-sm btn-secondary" href="/Cariler/CariGetir/@c.CariID">Güncelle</a>
-                                                <a class="btn-sm btn-danger" href="/Cariler/CariSil/@c.CariID">Sil</a>
+                                                <a class="btn-sm btn-primary" href="">Yazdır</a>
                                             </td>
                                         </tr>
                                     }

@@ -14,6 +14,7 @@ namespace VenusTicariOtomasyon.Models.Siniflar
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
+        [Required(ErrorMessage = "Ad alanını doldurunuz")]
         public string CariAd { get; set; }
 
         [Column(TypeName = "Varchar")]
